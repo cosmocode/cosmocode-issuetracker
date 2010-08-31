@@ -16,6 +16,8 @@
 
 package de.cosmocode.issuetracker;
 
+import com.google.common.base.Predicate;
+
 import java.util.List;
 
 /**
@@ -35,6 +37,19 @@ public interface IssueTracker {
      * @return the created issue
      */
     Issue createIssue(String title, String description);
+
+    /**
+     * Creates a new issue. The action will be aborted if the
+     * precondition fails on one of the issue tracker's list.
+     *
+     * @param title the issue's title
+     * @param description the issue's description
+     * @param duplicationCheck checks, if the issue is a duplicate of another
+     * @return the created issue
+     * @throws DuplicateIssueException if the duplicationCheck prevents creation
+     */
+    Issue createIssue(String title, String description, Predicate<Issue> duplicationCheck)
+            throws DuplicateIssueException;
 
     /**
      * Lists all issues. Depends on the implementation, which

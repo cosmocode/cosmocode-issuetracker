@@ -18,6 +18,18 @@
         <developerConnection>scm:svn:https://commons.svn.cosmocode.de/cosmocode-issuetracker/trunk</developerConnection>
     </scm>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cosmocode</groupId>
+            <artifactId>cosmocode-commons</artifactId>
+            <version>[0.13.2,2)</version>
+        </dependency>
+    </dependencies>
+
     <repositories>
         <repository>
             <id>cosmocode-public</id>
