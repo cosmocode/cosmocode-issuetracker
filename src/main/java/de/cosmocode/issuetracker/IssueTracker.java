@@ -35,8 +35,9 @@ public interface IssueTracker {
      * @param title the issue's title
      * @param description the issue's description
      * @return the created issue
+     * @throws IssueTrackerException if something goes wrong
      */
-    Issue createIssue(String title, String description);
+    Issue createIssue(String title, String description) throws IssueTrackerException;
 
     /**
      * Creates a new issue. The action will be aborted if the
@@ -46,18 +47,19 @@ public interface IssueTracker {
      * @param description the issue's description
      * @param duplicationCheck checks, if the issue is a duplicate of another
      * @return the created issue
-     * @throws DuplicateIssueException if the duplicationCheck prevents creation
+     * @throws IssueTrackerException if something goes wrong
      */
     Issue createIssue(String title, String description, Predicate<Issue> duplicationCheck)
-            throws DuplicateIssueException;
+            throws IssueTrackerException;
 
     /**
      * Lists all issues. Depends on the implementation, which
      * issues will be returned.
      *
      * @return a list of issues
+     * @throws IssueTrackerException if something goes wrong
      */
-    List<Issue> listIssues();
+    List<Issue> listIssues() throws IssueTrackerException;
 
     /**
      * Updates an issue in the tracker. The issue to update
@@ -65,7 +67,8 @@ public interface IssueTracker {
      * {@link de.cosmocode.issuetracker.Issue#getId()}.
      *
      * @param issue the source issue for the update
+     * @throws IssueTrackerException if something goes wrong
      */
-    void updateIssue(Issue issue);
+    void updateIssue(Issue issue) throws IssueTrackerException;
 
 }

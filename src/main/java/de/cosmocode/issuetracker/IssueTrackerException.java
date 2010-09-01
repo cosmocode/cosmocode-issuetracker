@@ -16,23 +16,24 @@
 
 package de.cosmocode.issuetracker;
 
-import com.google.common.base.Preconditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @author Tobias Sarnowski
  */
-public final class DuplicateIssueException extends IssueTrackerException {
-    private static final Logger LOG = LoggerFactory.getLogger(DuplicateIssueException.class);
+public abstract class IssueTrackerException extends Exception {
 
-    private final Issue issue;
-
-    public DuplicateIssueException(Issue issue) {
-        this.issue = Preconditions.checkNotNull(issue, "issue");
+    protected IssueTrackerException() {
     }
 
-    public Issue getIssue() {
-        return issue;
+    protected IssueTrackerException(String message) {
+        super(message);
     }
+
+    protected IssueTrackerException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    protected IssueTrackerException(Throwable cause) {
+        super(cause);
+    }
+
 }

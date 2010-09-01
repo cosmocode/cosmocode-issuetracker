@@ -29,7 +29,7 @@ public abstract class AbstractIssueTracker implements IssueTracker {
     private static final Logger LOG = LoggerFactory.getLogger(AbstractIssueTracker.class);
 
     @Override
-    public Issue createIssue(String title, String description, Predicate<Issue> duplicationCheck) throws DuplicateIssueException {
+    public Issue createIssue(String title, String description, Predicate<Issue> duplicationCheck) throws IssueTrackerException {
         for (Issue issue: listIssues()) {
             if (duplicationCheck.apply(issue)) {
                 throw new DuplicateIssueException(issue);
