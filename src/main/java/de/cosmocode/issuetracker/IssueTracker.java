@@ -18,8 +18,6 @@ package de.cosmocode.issuetracker;
 
 import com.google.common.base.Predicate;
 
-import java.util.List;
-
 /**
  * Describes a generic issue tracker like JIRA,
  * ActiveCollab, BugZilla, ... or self made issue
@@ -59,7 +57,7 @@ public interface IssueTracker {
      * @return a list of issues
      * @throws IssueTrackerException if something goes wrong
      */
-    List<? extends Issue> listIssues() throws IssueTrackerException;
+    Iterable<? extends Issue> listIssues() throws IssueTrackerException;
 
     /**
      * Updates an issue in the tracker. The issue to update
