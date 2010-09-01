@@ -47,7 +47,7 @@ public interface IssueTracker {
      * @return the created issue
      * @throws IssueTrackerException if something goes wrong
      */
-    Issue createIssue(String title, String description, Predicate<Issue> duplicationCheck)
+    Issue createIssue(String title, String description, Predicate<? super Issue> duplicationCheck)
             throws IssueTrackerException;
 
     /**
