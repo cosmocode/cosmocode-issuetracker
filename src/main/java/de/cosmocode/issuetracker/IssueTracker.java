@@ -59,7 +59,7 @@ public interface IssueTracker {
      * @return a list of issues
      * @throws IssueTrackerException if something goes wrong
      */
-    List<Issue> listIssues() throws IssueTrackerException;
+    List<? extends Issue> listIssues() throws IssueTrackerException;
 
     /**
      * Updates an issue in the tracker. The issue to update
@@ -67,8 +67,9 @@ public interface IssueTracker {
      * {@link de.cosmocode.issuetracker.Issue#getId()}.
      *
      * @param issue the source issue for the update
+     * @return the updated issue
      * @throws IssueTrackerException if something goes wrong
      */
-    void updateIssue(Issue issue) throws IssueTrackerException;
+    Issue updateIssue(Issue issue) throws IssueTrackerException;
 
 }
