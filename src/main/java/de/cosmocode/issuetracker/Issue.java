@@ -66,4 +66,11 @@ public interface Issue {
      */
     void setDescription(String description);
 
+    /**
+     * Triggers an update of the ticket
+     *
+     * @throws IssueTrackerException if something goes wrong
+     */
+    void update() throws IssueTrackerException;
+
 }

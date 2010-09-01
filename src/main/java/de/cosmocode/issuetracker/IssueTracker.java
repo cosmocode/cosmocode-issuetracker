@@ -60,14 +60,12 @@ public interface IssueTracker {
     Iterable<? extends Issue> listIssues() throws IssueTrackerException;
 
     /**
-     * Updates an issue in the tracker. The issue to update
-     * is identified by the
-     * {@link de.cosmocode.issuetracker.Issue#getId()}.
+     * Receives a single issue with the given ID.
      *
-     * @param issue the source issue for the update
-     * @return the updated issue
+     * @param issueId the issue's ID
+     * @return the issue
      * @throws IssueTrackerException if something goes wrong
      */
-    Issue updateIssue(Issue issue) throws IssueTrackerException;
+    Issue getIssue(String issueId) throws IssueTrackerException;
 
 }
