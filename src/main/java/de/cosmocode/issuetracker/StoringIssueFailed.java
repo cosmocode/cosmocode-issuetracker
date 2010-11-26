@@ -17,11 +17,16 @@
 package de.cosmocode.issuetracker;
 
 /**
+ * An {@link IssueTrackerException} which indicates an error during issue creation.
+ * 
  * @author Tobias Sarnowski
  */
 public final class StoringIssueFailed extends IssueTrackerException {
 
+    private static final long serialVersionUID = 5482526212846219181L;
+
     public StoringIssueFailed() {
+        
     }
 
     public StoringIssueFailed(String message) {
@@ -35,4 +40,5 @@ public final class StoringIssueFailed extends IssueTrackerException {
     public StoringIssueFailed(Throwable cause) {
         super(cause);
     }
+    
 }

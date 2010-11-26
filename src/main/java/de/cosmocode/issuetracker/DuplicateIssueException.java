@@ -21,11 +21,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * An {@link IssueTrackerException} which indicates a duplicate issue.
+ * 
  * @author Tobias Sarnowski
  */
 public final class DuplicateIssueException extends IssueTrackerException {
-    private static final Logger LOG = LoggerFactory.getLogger(DuplicateIssueException.class);
-
+    
+    private static final long serialVersionUID = -2237164096242397024L;
+    
     private final Issue issue;
 
     public DuplicateIssueException(Issue issue) {
@@ -35,4 +38,5 @@ public final class DuplicateIssueException extends IssueTrackerException {
     public Issue getIssue() {
         return issue;
     }
+    
 }

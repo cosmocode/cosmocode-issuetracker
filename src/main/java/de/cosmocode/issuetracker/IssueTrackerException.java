@@ -17,11 +17,16 @@
 package de.cosmocode.issuetracker;
 
 /**
+ * General exception type utilized by {@link IssueTracker}.
+ * 
  * @author Tobias Sarnowski
  */
 public abstract class IssueTrackerException extends Exception {
 
+    private static final long serialVersionUID = -6433587005570197243L;
+
     protected IssueTrackerException() {
+        
     }
 
     protected IssueTrackerException(String message) {

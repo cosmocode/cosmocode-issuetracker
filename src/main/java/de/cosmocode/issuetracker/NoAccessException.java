@@ -17,22 +17,28 @@
 package de.cosmocode.issuetracker;
 
 /**
+ * An {@link IssueTrackerException} which indicates a failed authentication/authorization.
+ * 
  * @author Tobias Sarnowski
  */
 final class NoAccessException extends IssueTrackerException {
 
+    private static final long serialVersionUID = -1144086220650975461L;
+
     NoAccessException() {
+        
     }
 
     NoAccessException(String message) {
         super(message);
     }
 
-    NoAccessException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
     NoAccessException(Throwable cause) {
         super(cause);
     }
+
+    NoAccessException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    
 }

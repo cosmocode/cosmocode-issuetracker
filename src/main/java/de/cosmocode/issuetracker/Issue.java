@@ -46,28 +46,28 @@ public interface Issue {
     String getTitle();
 
     /**
-     * Sets the issue's title
+     * Sets the issue's title.
      *
      * @param title issue's title
      */
     void setTitle(String title);
 
     /**
-     * Returns the issue's description
+     * Returns the issue's description.
      *
      * @return issue's description
      */
     String getDescription();
 
     /**
-     * Sets the issue's description
+     * Sets the issue's description.
      *
      * @param description issue's description
      */
     void setDescription(String description);
 
     /**
-     * Triggers an update of the ticket
+     * Triggers an update of the ticket.
      *
      * @throws IssueTrackerException if something goes wrong
      */
